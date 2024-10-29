@@ -1,0 +1,3 @@
+- weather-api:578a4942a2b7489c96670138242810
+  - London:
+    https://api.weatherapi.com/v1/current.json?key=578a4942a2b7489c96670138242810&q=London&aqi=no

@@ -2,6 +2,15 @@ import { useState } from 'react';
 
 const Form = () => {
   const [city, setCity] = useState<string>('');
+
+  const getWeather = (e: any) => {
+    e.preventDefault();
+    fetch(
+      'https://api.weatherapi.com/v1/current.json?key=578a4942a2b7489c96670138242810&q=London&aqi=no',
+    )
+      .then((res) => console.log(res.json()))
+      .then((data) => console.log(data));
+  };
   return (
     <form>
       <input
@@ -11,7 +20,9 @@ const Form = () => {
         onChange={(e) => setCity(e.target.value)}
       />
       {city}
-      <button type="submit">Get Weather</button>
+      <button type="submit" onClick={getWeather}>
+        Get Weather
+      </button>
     </form>
   );
 };
